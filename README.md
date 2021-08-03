@@ -1,4 +1,4 @@
-# food_delivery_app
+# food_delivery
 
 A new Flutter project.
 
