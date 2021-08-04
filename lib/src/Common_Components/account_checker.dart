@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AccountExists extends StatelessWidget {
   final bool login;
@@ -16,14 +17,15 @@ class AccountExists extends StatelessWidget {
       children: <Widget>[
         Text(
           login ? "Don’t have an Account ? " : "Already have an Account ? ",
-          style: TextStyle(color: Color.fromRGBO(230, 230, 230, 1), fontSize: 17,),
+          
+          style: GoogleFonts.raleway(color: Color.fromRGBO(230, 230, 230, 1), fontSize: 17,fontWeight: FontWeight.bold,),
           
         ),
         GestureDetector(
           onTap: press,
           child: Text(
             login ? "Sign Up" : "Sign In",
-            style: TextStyle(
+            style: GoogleFonts.raleway(
               color: Color.fromRGBO(230, 230, 230, 1),
               fontWeight: FontWeight.bold,
               fontSize: 18,

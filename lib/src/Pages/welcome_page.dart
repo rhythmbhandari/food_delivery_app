@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food_delivery_app/src/Common_Components/button.dart';
 import 'package:food_delivery_app/src/Pages/signup_page.dart';
 import 'package:food_delivery_app/src/Pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'login_page.dart';
 
@@ -28,7 +29,7 @@ class WelcomeBody extends StatelessWidget {
           children: <Widget>[
             Text(
               "WELCOME",
-              style: TextStyle(
+              style: GoogleFonts.raleway(
                   fontWeight: FontWeight.bold,
                   color: Color.fromRGBO(230, 230, 230, 1),
                   fontSize: 25),

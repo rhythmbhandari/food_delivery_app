@@ -16,6 +16,8 @@ dependencies:
   firebase_auth: "^0.20.1"
   provider: ^4.3.2+1
   fluttertoast: ^8.0.8
+  google_fonts: ^1.1.2
+  
 
 dev_dependencies:
   flutter_test:

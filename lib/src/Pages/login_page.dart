@@ -7,6 +7,7 @@ import 'package:food_delivery_app/src/Common_Components/login_button.dart';
 import 'package:food_delivery_app/src/Common_Components/password_field.dart';
 import 'package:food_delivery_app/src/Pages/home_page.dart';
 import 'package:food_delivery_app/src/Pages/signup_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -29,7 +30,7 @@ class LoginBody extends StatelessWidget {
           children: <Widget>[
             Text(
               "LOGIN",
-              style: TextStyle(
+              style: GoogleFonts.raleway(
                   fontWeight: FontWeight.bold,
                   color: Color.fromRGBO(230, 230, 230, 1),
                   fontSize: 25),

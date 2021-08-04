@@ -4,6 +4,7 @@ import 'package:food_delivery_app/src/Common_Components/input_field.dart';
 import 'package:food_delivery_app/src/Common_Components/password_field.dart';
 import 'package:food_delivery_app/src/Pages/home_page.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final auth = FirebaseAuth.instance;
 
@@ -38,7 +39,7 @@ class LoginButton extends StatelessWidget {
           onPressed: () => _signin(em, pass, context),
           child: Text(
             text,
-            style: TextStyle(color: textColor),
+            style: GoogleFonts.raleway(color: textColor),
           ),
         ),
       ),

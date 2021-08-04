@@ -6,6 +6,7 @@ import 'package:food_delivery_app/src/Common_Components/input_field.dart';
 import 'package:food_delivery_app/src/Common_Components/password_field.dart';
 import 'package:food_delivery_app/src/Common_Components/signup_button.dart';
 import 'package:food_delivery_app/src/Pages/home_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'login_page.dart';
 
 
@@ -29,7 +30,7 @@ class SignUpBody extends StatelessWidget {
           children: <Widget>[
             Text(
               "SIGNUP",
-              style: TextStyle(
+              style: GoogleFonts.raleway(
                   fontWeight: FontWeight.bold,
                   color: Color.fromRGBO(230, 230, 230, 1),
                   fontSize: 25),

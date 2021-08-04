@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GuestMode extends StatelessWidget {
   final Function press;
@@ -16,7 +17,7 @@ class GuestMode extends StatelessWidget {
           onTap: press,
           child: Text(
             "Guest Mode?",
-            style: TextStyle(
+            style: GoogleFonts.raleway(
               color: Color.fromRGBO(230, 230, 230, 1),
               fontWeight: FontWeight.bold,
               fontSize: 18,
