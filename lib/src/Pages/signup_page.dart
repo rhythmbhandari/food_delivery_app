@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_delivery_app/src/Common_Components/account_checker.dart';
+import 'package:food_delivery_app/src/Common_Components/guest_mode.dart';
 import 'package:food_delivery_app/src/Common_Components/input_field.dart';
 import 'package:food_delivery_app/src/Common_Components/password_field.dart';
 import 'package:food_delivery_app/src/Common_Components/signup_button.dart';
+import 'package:food_delivery_app/src/Pages/home_page.dart';
 import 'login_page.dart';
 
 
@@ -57,6 +59,18 @@ class SignUpBody extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) {
                       return LoginPage();
+                    },
+                  ),
+                );
+              },
+            ),
+            GuestMode(
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomePage();
                     },
                   ),
                 );

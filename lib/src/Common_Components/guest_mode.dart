@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-class AccountExists extends StatelessWidget {
-  final bool login;
+class GuestMode extends StatelessWidget {
   final Function press;
-  const AccountExists({
+  const GuestMode({
     Key key,
-    this.login = true,
     this.press,
   }) : super(key: key);
 
@@ -14,15 +12,10 @@ class AccountExists extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(
-          login ? "Don’t have an Account ? " : "Already have an Account ? ",
-          style: TextStyle(color: Color.fromRGBO(230, 230, 230, 1), fontSize: 17,),
-          
-        ),
         GestureDetector(
           onTap: press,
           child: Text(
-            login ? "Sign Up" : "Sign In",
+            "Guest Mode?",
             style: TextStyle(
               color: Color.fromRGBO(230, 230, 230, 1),
               fontWeight: FontWeight.bold,

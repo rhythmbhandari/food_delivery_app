@@ -49,7 +49,6 @@ class LoginButton extends StatelessWidget {
 _signin(String em, String pass, context) async {
     try {
       await auth.signInWithEmailAndPassword(email: em, password : pass);
-
       //Success
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => HomePage()));
