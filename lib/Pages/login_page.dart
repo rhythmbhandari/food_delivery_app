@@ -1,64 +1,64 @@
-
 import 'package:flutter/material.dart';
 
+import 'package:flutter_svg/svg.dart';
+import 'package:food_delivery_app/Common_Components/Button.dart';
+import 'package:food_delivery_app/Common_Components/account_checker.dart';
+import 'package:food_delivery_app/Common_Components/input_field.dart';
+import 'package:food_delivery_app/Common_Components/password_field.dart';
 import 'package:food_delivery_app/Pages/signup_page.dart';
-import 'package:food_delivery_app/Reused/account_check.dart';
-import 'package:food_delivery_app/Reused/rounded_button.dart';
-import 'package:food_delivery_app/Reused/rounded_passwordfield.dart';
-import 'package:food_delivery_app/Reused/rounded_textfield.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Body(),
+      body: LoginBody(),
     );
   }
 }
 
 
-class Body extends StatelessWidget {
-  const Body({
+class LoginBody extends StatelessWidget {
+  const LoginBody({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Background(
+    return LoginBackground(
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               "LOGIN",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromRGBO(230,230,230,1), fontSize: 25),            
             ),
             SizedBox(height: size.height * 0.03),
             SvgPicture.asset(
-              "assets/icons/6.svg",
+              "assets/images/6.svg",
               height: size.height * 0.35,
             ),
             SizedBox(height: size.height * 0.03),
-            RoundedInputField(
+            InputField(
               hintText: "Your Email",
               onChanged: (value) {},
             ),
-            RoundedPasswordField(
+            PasswordField(
               onChanged: (value) {},
             ),
-            RoundedButton(
+            Button(
               text: "LOGIN",
               press: () {},
             ),
             SizedBox(height: size.height * 0.03),
-            AlreadyHaveAnAccountCheck(
+            AccountExists(
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SignUpScreen();
+                      return SignUpPage();
                     },
                   ),
                 );
@@ -71,41 +71,27 @@ class Body extends StatelessWidget {
   }
 }
 
-class SvgPicture {
-  static asset(String s, {double height}) {}
-}
-
-
-class Background extends StatelessWidget {
+class LoginBackground extends StatelessWidget {
   final Widget child;
-  const Background({
+  const LoginBackground({
     Key key,
     @required this.child,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size screenSize = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      height: size.height,
+      height: screenSize.height,
       child: Stack(
         alignment: Alignment.center,
-        children: <Widget>[
-          Positioned(
+        children: <Widget>[Positioned(
             top: 0,
             left: 0,
             child: Image.asset(
-              "assets/images/main_top.png",
-              width: size.width * 0.35,
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Image.asset(
-              "assets/images/login_bottom.png",
-              width: size.width * 0.4,
+              "assets/images/hehe.png",
+              width: screenSize.width * 1,
             ),
           ),
           child,

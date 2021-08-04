@@ -1,59 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:food_delivery_app/Common_Components/Button.dart';
-import 'package:food_delivery_app/Common_Components/account_checker.dart';
-import 'package:food_delivery_app/Common_Components/input_field.dart';
-import 'package:food_delivery_app/Common_Components/password_field.dart';
 import 'package:food_delivery_app/Pages/login_page.dart';
+import 'package:food_delivery_app/Pages/signup_page.dart';
+import 'package:food_delivery_app/Common_Components/Button.dart';
+import 'package:flutter_svg/svg.dart';
 
-class SignUpPage extends StatelessWidget {
+class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SignUpBody(),
+      body: WelcomeBody(),
     );
   }
 }
 
-
-class SignUpBody extends StatelessWidget {
+class WelcomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return SignUpBackground(
-      child: SingleChildScrollView(
+    Size screenSize = MediaQuery.of(context).size;
+    return WelcomeBackground(
+     child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "SIGNUP",
+              "WELCOME",
               style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromRGBO(230,230,230,1), fontSize: 25),
             ),
-            SizedBox(height: size.height * 0.03),
+            SizedBox(height: screenSize.height * 0.05),
             SvgPicture.asset(
-              "assets/images/7.svg",
-              height: size.height * 0.35,
+              "assets/images/2.svg",
+              height: screenSize.height * 0.45,
             ),
-            InputField(
-              hintText: "Your Email",
-              onChanged: (value) {},
-            ),
-            PasswordField(
-              onChanged: (value) {},
-            ),
+            SizedBox(height: screenSize.height * 0.05),
             Button(
-              text: "SIGNUP",
-              press: () {},
-            ),
-            SizedBox(height: size.height * 0.03),
-            AccountExists(
-              login: false,
+              text: "LOGIN",
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
                       return LoginPage();
+                    },
+                  ),
+                );
+              },
+            ),
+            Button(
+              text: "SIGN UP",
+              color: Color.fromRGBO(230,230,230,1),
+              textColor: Color.fromRGBO(33, 158, 188, 1),
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SignUpPage();
                     },
                   ),
                 );
@@ -66,9 +67,10 @@ class SignUpBody extends StatelessWidget {
   }
 }
 
-class SignUpBackground extends StatelessWidget {
+
+class WelcomeBackground extends StatelessWidget {
   final Widget child;
-  const SignUpBackground({
+  const WelcomeBackground({
     Key key,
     @required this.child,
   }) : super(key: key);
@@ -81,7 +83,8 @@ class SignUpBackground extends StatelessWidget {
       width: double.infinity,
       child: Stack(
         alignment: Alignment.center,
-        children: <Widget>[Positioned(
+        children: <Widget>[
+          Positioned(
             top: 0,
             left: 0,
             child: Image.asset(

@@ -1,7 +1,5 @@
 name: food_delivery_app
-description: A new Flutter project.
-
-publish_to: 'none' 
+description: A Trail Food Delivery app project.
 
 version: 1.0.0+1
 
@@ -12,12 +10,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  flutter_svg: ^0.22.0 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   integration_test:
     sdk: flutter
+  flutter_native_splash: ^1.2.1
 
 flutter_native_splash:
   color: "#DE781F"
@@ -31,10 +31,6 @@ flutter_native_splash:
   #iso_content_mode: scaleAspectFill
 
 flutter:
-
   uses-material-design: true
-
   assets:
-      - assets/images/splash_logo.png
-      - assets/images/
-      - assets/icons/
+    - assets/images/
