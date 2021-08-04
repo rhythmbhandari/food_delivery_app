@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_delivery_app/src/Common_Components/button.dart';
@@ -7,6 +8,7 @@ import 'package:food_delivery_app/src/Pages/login_page.dart';
 import 'login_page.dart';
 
 class WelcomePage extends StatelessWidget {
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

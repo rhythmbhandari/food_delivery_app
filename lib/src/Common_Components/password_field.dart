@@ -15,9 +15,9 @@ class PasswordField extends StatelessWidget {
       child: TextField(
         obscureText: true,
         onChanged: (passwordValue) {
-          password = passwordValue.trim();
-          print(password);
-        },
+                password = passwordValue.trim();
+                print(password);
+              },
         cursorColor: Color.fromRGBO(33, 158, 188, 1),
         decoration: InputDecoration(
           hintText: "Password",

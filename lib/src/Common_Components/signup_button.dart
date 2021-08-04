@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:food_delivery_app/src/Common_Components/input_field.dart';
 import 'package:food_delivery_app/src/Common_Components/password_field.dart';
+import 'package:food_delivery_app/src/Pages/login_page.dart';
 
-final auth1 = FirebaseAuth.instance;
+final auth = FirebaseAuth.instance;
 
 class SignUpButton extends StatelessWidget {
   static String pass = PasswordField.password;
@@ -32,10 +34,7 @@ class SignUpButton extends StatelessWidget {
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
           color: color,
-          onPressed: () {
-             auth1.createUserWithEmailAndPassword(email: em, password: pass);
-            
-          },
+          onPressed: () => _signup(em, pass, context),
           child: Text(
             text,
             style: TextStyle(color: textColor),
@@ -43,5 +42,18 @@ class SignUpButton extends StatelessWidget {
         ),
       ),
     );
+  }
+_signup(String em, String pass, context) async {
+    try {
+      //Create Get Firebase Auth User
+      await auth.createUserWithEmailAndPassword(email: em, password : pass);
+      //Success
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => LoginPage()));
+
+    } on FirebaseAuthException catch (error) {
+      Fluttertoast.showToast(msg: error.message,gravity: ToastGravity.TOP,);
+    }
+
   }
 }

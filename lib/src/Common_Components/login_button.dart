@@ -2,8 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/src/Common_Components/input_field.dart';
 import 'package:food_delivery_app/src/Common_Components/password_field.dart';
+import 'package:food_delivery_app/src/Pages/home_page.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 final auth = FirebaseAuth.instance;
+
 class LoginButton extends StatelessWidget {
   static String pass = PasswordField.password;
   static String em = InputField.email;
@@ -23,18 +26,16 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size screenSize = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
-      width: size.width * 0.8,
+      width: screenSize.width * 0.8,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
           color: color,
-            onPressed: () {
-              auth.signInWithEmailAndPassword(email: em, password: pass);
-            },
+          onPressed: () => _signin(em, pass, context),
           child: Text(
             text,
             style: TextStyle(color: textColor),
@@ -43,4 +44,20 @@ class LoginButton extends StatelessWidget {
       ),
     );
   }
+
+
+_signin(String em, String pass, context) async {
+    try {
+      await auth.signInWithEmailAndPassword(email: em, password : pass);
+
+      //Success
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => HomePage()));
+
+    } on FirebaseAuthException catch (error) {
+      Fluttertoast.showToast(msg: error.message,gravity: ToastGravity.TOP);
+    }
+
+  }
+
 }
