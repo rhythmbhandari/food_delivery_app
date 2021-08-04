@@ -12,6 +12,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.22.0 
 
+  firebase_core: "^0.7.0"
+  firebase_auth: "^0.20.1"
+  provider: ^4.3.2+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -29,6 +33,7 @@ flutter_native_splash:
   
   #android_gravity: fill
   #iso_content_mode: scaleAspectFill
+
 
 flutter:
   uses-material-design: true
