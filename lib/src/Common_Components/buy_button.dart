@@ -18,45 +18,31 @@ class PriceAndBuy extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          flex: 1,
-          child: Column(
-            children: [
-              Text(
-                'Price',
-                style: GoogleFonts.raleway(
-                  fontSize: 18.0,
+            flex: 1,
+            child: Column(
+              children: [
+                Text(
+                  'Price',
+                  style: GoogleFonts.raleway(
+                    fontSize: 18.0,
+                  ),
                 ),
-              ),
-              RichText(
-                text: TextSpan(
-                  children: [
+                RichText(
+                  text: TextSpan(children: [
                     TextSpan(
-                      text: '\£ ',
-                      style: GoogleFonts.raleway(
-                        color: kRedColor,
-                        fontSize: 22
-                      )
-                    ),
+                        text: '\$ ',
+                        style: GoogleFonts.raleway(
+                            color: kRedColor, fontSize: 22)),
                     TextSpan(
-                      text: item.price.toString(),
-                      style: GoogleFonts.raleway(
-                        color: Colors.black,
-                        fontSize: 22
-                      )
-                    )
-                  ]
-                ),
-              )
-            ],
-          )
-        ),
-
+                        text: item.price.toString(),
+                        style: GoogleFonts.raleway(
+                            color: Colors.black, fontSize: 22))
+                  ]),
+                )
+              ],
+            )),
         Spacer(),
-
-        Expanded(
-          flex: 4,
-          child: AddCart(tap: () {})
-        ),
+        Expanded(flex: 4, child: AddCart(tap: () {})),
       ],
     );
   }

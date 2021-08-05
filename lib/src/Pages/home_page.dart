@@ -11,28 +11,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(
-        context,
-        leading: Transform.translate(
-          offset: Offset(kDefaultPadding * 0.5, 0),
-          child: IconButton(
-            icon: Icon(Icons.menu_sharp, color: Color.fromRGBO(230, 230, 230, 1)), onPressed: () {  },
+      appBar: buildAppBar(context,
+          leading: Transform.translate(
+            offset: Offset(kDefaultPadding * 0.5, 0),
+            child: IconButton(
+              icon: Icon(Icons.menu_sharp,
+                  color: Color.fromRGBO(230, 230, 230, 1)),
+              onPressed: () {},
+            ),
           ),
-        ),
-        title: '',
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.notifications_none, color: Color.fromRGBO(230, 230, 230, 1)), onPressed: () {  },
-          ),
-          IconButton(
-            icon: Icon(Icons.payment_sharp, color: Color.fromRGBO(230, 230, 230, 1)), onPressed: () {  },
-          ),
-          IconButton(
-            icon: Icon(Icons.shopping_cart, color: Color.fromRGBO(230, 230, 230, 1)), onPressed: () {  },
-          )
-        ]
-      ),
-
+          title: '',
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.notifications_none,
+                  color: Color.fromRGBO(230, 230, 230, 1)),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.payment_sharp,
+                  color: Color.fromRGBO(230, 230, 230, 1)),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.shopping_cart,
+                  color: Color.fromRGBO(230, 230, 230, 1)),
+              onPressed: () {},
+            )
+          ]),
       extendBody: true,
       body: SingleChildScrollView(
         padding: EdgeInsets.all(kDefaultPadding),
@@ -44,42 +49,32 @@ class HomePage extends StatelessWidget {
               Text(
                 'Food Delivery',
                 style: GoogleFonts.raleway(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700
-                ),
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700),
               ),
-
               SizedBox(height: kDefaultPadding),
-
               TextField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(50)),
-        ),
-        focusedBorder:  OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(50)),
-        ),
-        fillColor: Color.fromRGBO(33, 158, 188, 0.8),
-        filled: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-        prefixIcon: IconButton(
-            icon: Icon(Icons.search, color: Color.fromRGBO(230, 230, 230, 1)), onPressed: () {  },
-          ),
-        hintText: 'Search for Food'
-      ),
-    ),
-
-              Row(
-                children: [
-
-                  Expanded(child: Categories())
-                  
-                ]
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    fillColor: Color.fromRGBO(230, 230, 230, 0.3),
+                    filled: true,
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                    prefixIcon: IconButton(
+                      icon: Icon(Icons.search,
+                          color: Color.fromRGBO(230, 230, 230, 1)),
+                      onPressed: () {},
+                    ),
+                    hintText: 'Search for Food'),
               ),
-
+              Row(children: [Expanded(child: Categories())]),
               SizedBox(height: kDefaultPadding),
-
               Text(
                 "What's Trending?",
                 style: GoogleFonts.raleway(
@@ -87,22 +82,20 @@ class HomePage extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
-
               SizedBox(height: kDefaultPadding),
-
               StaggeredGridView.countBuilder(
-                 padding: EdgeInsets.all(0),
-                 crossAxisCount: 2,
-                 itemCount: demoItems.length,
-                 crossAxisSpacing: 10,
-                 physics: NeverScrollableScrollPhysics(),
-                 shrinkWrap: true,
-                 mainAxisSpacing: 0,
-                 itemBuilder: (context, index) {
-                   return ItemCard(item: demoItems[index], index: index);
-                 },
-                 staggeredTileBuilder: (index) => StaggeredTile.fit(1),
-               ),
+                padding: EdgeInsets.all(0),
+                crossAxisCount: 2,
+                itemCount: demoItems.length,
+                crossAxisSpacing: 10,
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                mainAxisSpacing: 0,
+                itemBuilder: (context, index) {
+                  return ItemCard(item: demoItems[index], index: index);
+                },
+                staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+              ),
             ],
           ),
         ),
