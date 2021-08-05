@@ -1,6 +1,9 @@
 # food_delivery_app
   A simple food delivery app with Firebase authentication API. This app is still in development mode. So, it is incomplete and requires more features and tinkering. 
 
+## APK LINK
+https://drive.google.com/file/d/1o4m4FVOFHPvZTKQ7VUNPvU57gCDD4w-R/view?usp=sharing
+
 ## App Footage
 
 https://user-images.githubusercontent.com/69192521/128300234-91bc5cf0-75c0-42a0-8e49-5446c503f030.mov 
