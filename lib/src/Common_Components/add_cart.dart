@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/src/Common_Components/default_padding.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class AddCart extends StatelessWidget {
   const AddCart({
     Key key,
@@ -17,9 +16,8 @@ class AddCart extends StatelessWidget {
       onTap: tap,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kDefaultPadding * 2),
-          color: kRedColor
-        ),
+            borderRadius: BorderRadius.circular(kDefaultPadding * 2),
+            color: kRedColor),
         height: 50.0,
         alignment: Alignment.center,
         child: Text(

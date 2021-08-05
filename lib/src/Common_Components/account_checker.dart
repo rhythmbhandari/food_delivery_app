@@ -17,9 +17,11 @@ class AccountExists extends StatelessWidget {
       children: <Widget>[
         Text(
           login ? "Don’t have an Account ? " : "Already have an Account ? ",
-          
-          style: GoogleFonts.raleway(color: Color.fromRGBO(230, 230, 230, 1), fontSize: 17,fontWeight: FontWeight.bold,),
-          
+          style: GoogleFonts.raleway(
+            color: Color.fromRGBO(230, 230, 230, 1),
+            fontSize: 17,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         GestureDetector(
           onTap: press,
@@ -35,5 +37,4 @@ class AccountExists extends StatelessWidget {
       ],
     );
   }
-
 }

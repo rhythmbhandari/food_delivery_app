@@ -6,7 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:food_delivery_app/src/Pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
- final auth = FirebaseAuth.instance;
+final auth = FirebaseAuth.instance;
 
 class LoginButton extends StatelessWidget {
   final String text;
@@ -22,7 +22,6 @@ class LoginButton extends StatelessWidget {
     this.textColor = colText,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -34,7 +33,8 @@ class LoginButton extends StatelessWidget {
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
           color: color,
-          onPressed: () => _signin(_InputFieldState._email, _PasswordFieldState._password, context),
+          onPressed: () => _signin(
+              _InputFieldState._email, _PasswordFieldState._password, context),
           child: Text(
             text,
             style: GoogleFonts.raleway(color: textColor),
@@ -44,23 +44,22 @@ class LoginButton extends StatelessWidget {
     );
   }
 
-
-_signin(String em, String pass, context) async {
+  _signin(String em, String pass, context) async {
     try {
-      await auth.signInWithEmailAndPassword(email: em, password : pass);
-      Fluttertoast.showToast(msg: "Welcome Back",gravity: ToastGravity.TOP,);
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => HomePage()));
-
+      await auth.signInWithEmailAndPassword(email: em, password: pass);
+      Fluttertoast.showToast(
+        msg: "Welcome Back",
+        gravity: ToastGravity.TOP,
+      );
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
     } catch (error) {
-      Fluttertoast.showToast(msg: "Sorry, work in progress. The error : "+error.message ,gravity: ToastGravity.TOP);
+      Fluttertoast.showToast(
+          msg: "Sorry, work in progress. The error : " + error.message,
+          gravity: ToastGravity.TOP);
     }
-
   }
-
 }
-
-
 
 class SignUpButton extends StatelessWidget {
   final String text;
@@ -87,7 +86,8 @@ class SignUpButton extends StatelessWidget {
         child: FlatButton(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
           color: color,
-          onPressed: () => _signup(_InputFieldState._email, _PasswordFieldState._password, context),
+          onPressed: () => _signup(
+              _InputFieldState._email, _PasswordFieldState._password, context),
           child: Text(
             text,
             style: GoogleFonts.raleway(color: textColor),
@@ -96,22 +96,26 @@ class SignUpButton extends StatelessWidget {
       ),
     );
   }
-_signup(String em, String pass, context) async {
+
+  _signup(String em, String pass, context) async {
     try {
       //Create Get Firebase Auth User
-      await auth.createUserWithEmailAndPassword(email: em, password : pass);
+      await auth.createUserWithEmailAndPassword(email: em, password: pass);
       //Success
-      Fluttertoast.showToast(msg: "Account Successfully Created",gravity: ToastGravity.TOP,);
+      Fluttertoast.showToast(
+        msg: "Account Successfully Created",
+        gravity: ToastGravity.TOP,
+      );
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => LoginPage()));
-
     } catch (error) {
-      Fluttertoast.showToast(msg: "Sorry, work in progress. The error : "+error.message,gravity: ToastGravity.TOP,);
+      Fluttertoast.showToast(
+        msg: "Sorry, work in progress. The error : " + error.message,
+        gravity: ToastGravity.TOP,
+      );
     }
-
   }
 }
-
 
 class PasswordField extends StatefulWidget {
   final ValueChanged<String> onChanged;
@@ -119,7 +123,6 @@ class PasswordField extends StatefulWidget {
     Key key,
     this.onChanged,
   }) : super(key: key);
-
 
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
@@ -149,7 +152,6 @@ class _PasswordFieldState extends State<PasswordField> {
           suffixIcon: Icon(
             Icons.visibility,
             color: Color.fromRGBO(33, 158, 188, 1),
-            
           ),
           border: InputBorder.none,
         ),
@@ -169,10 +171,8 @@ class InputField extends StatefulWidget {
     this.onChanged,
   }) : super(key: key);
 
-  
   @override
   _InputFieldState createState() => _InputFieldState();
-  
 }
 
 class _InputFieldState extends State<InputField> {
@@ -180,7 +180,7 @@ class _InputFieldState extends State<InputField> {
 
   static String _email;
   @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
         keyboardType: TextInputType.emailAddress,
@@ -191,7 +191,9 @@ class _InputFieldState extends State<InputField> {
         },
         cursorColor: Color.fromRGBO(33, 158, 188, 1),
         decoration: InputDecoration(
-          icon: Icon(Icons.person, color: Color.fromRGBO(33, 158, 188, 1),
+          icon: Icon(
+            Icons.person,
+            color: Color.fromRGBO(33, 158, 188, 1),
           ),
           hintText: "Your Email",
           border: InputBorder.none,

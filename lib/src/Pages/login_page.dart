@@ -17,7 +17,6 @@ class LoginPage extends StatelessWidget {
 }
 
 class LoginBody extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -41,9 +40,7 @@ class LoginBody extends StatelessWidget {
             SizedBox(height: size.height * 0.03),
             InputField(
               hintText: "Your Email",
-              onChanged: (value) {
-
-              },
+              onChanged: (value) {},
             ),
             PasswordField(
               onChanged: (value) {},

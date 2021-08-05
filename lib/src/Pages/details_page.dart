@@ -17,20 +17,21 @@ class DetailsPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: buildAppBar(
-        context,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios,color: Color.fromRGBO(230, 230, 230, 1)), onPressed: () { 
-            Navigator.pop(context);
-          }
-        ),
-        title: 'Detail',
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.thumbs_up_down,color:Color.fromRGBO(230, 230, 230, 1)), onPressed: () {  },
-          )
-        ]
-      ),
+      appBar: buildAppBar(context,
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios,
+                  color: Color.fromRGBO(230, 230, 230, 1)),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
+          title: 'Detail',
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.thumbs_up_down,
+                  color: Color.fromRGBO(230, 230, 230, 1)),
+              onPressed: () {},
+            )
+          ]),
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -39,65 +40,51 @@ class DetailsPage extends StatelessWidget {
             padding: EdgeInsets.only(top: size.height * 0.2),
             height: size.height * 0.8,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(kDefaultPadding * 5),
-                topRight: Radius.circular(kDefaultPadding * 5),
-              ),
-              color: Color(item.color)
-            ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(kDefaultPadding * 5),
+                  topRight: Radius.circular(kDefaultPadding * 5),
+                ),
+                color: Color(item.color)),
             child: SingleChildScrollView(
-              padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, kDefaultPadding),
+              padding: EdgeInsets.fromLTRB(
+                  kDefaultPadding, 0, kDefaultPadding, kDefaultPadding),
               child: SafeArea(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TitleBar(item: item),
-
                     SizedBox(height: kDefaultPadding),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Detail',
-                          style: GoogleFonts.raleway(
-                            fontSize: 18
-                          ),
+                          style: GoogleFonts.raleway(fontSize: 18),
                         ),
-
                         QtyCounter(),
                       ],
                     ),
-
                     SizedBox(height: kDefaultPadding),
-
                     Text(
                       item.description,
-                      style: GoogleFonts.raleway(
-                        fontSize: 14
-                      ),
+                      style: GoogleFonts.raleway(fontSize: 14),
                     ),
-
                     SizedBox(height: kDefaultPadding),
-
                     PriceAndBuy(item: item)
                   ],
                 ),
               ),
             ),
           ),
-
           Hero(
-            tag: item.id,
-            child: Image.asset(
-              item.image,
-              height: size.height * 0.4,
-              fit: BoxFit.fitHeight,
-            )
-          ),
+              tag: item.id,
+              child: Image.asset(
+                item.image,
+                height: size.height * 0.4,
+                fit: BoxFit.fitHeight,
+              )),
         ],
       ),
     );
   }
-
 }

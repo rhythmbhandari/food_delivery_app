@@ -22,30 +22,26 @@ class TitleBar extends StatelessWidget {
           children: [
             Text(
               item.name,
-              style: GoogleFonts.raleway(
-                fontSize: 24
-              ),
+              style: GoogleFonts.raleway(fontSize: 24),
             ),
-
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                  SvgPicture.asset(
-                    'assets/icons/star.svg',
-                    width: kDefaultPadding * 0.8,
-                  ),
-
-                  SizedBox(width: kDefaultPadding * 0.5),
-
-                  Text(
-                    '${item.rating.toString()} (${item.ratingCount.toString()})'
-                  )
+                SvgPicture.asset(
+                  'assets/icons/star.svg',
+                  width: kDefaultPadding * 0.8,
+                ),
+                SizedBox(width: kDefaultPadding * 0.5),
+                Text(
+                    '${item.rating.toString()} (${item.ratingCount.toString()})')
               ],
             )
           ],
         ),
-
-        IconButton(icon: Icon(Icons.favorite,color:Color.fromRGBO(230, 230, 230, 1)), onPressed: () {  },)
+        IconButton(
+          icon: Icon(Icons.favorite, color: Color.fromRGBO(230, 230, 230, 1)),
+          onPressed: () {},
+        )
       ],
     );
   }

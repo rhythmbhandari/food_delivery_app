@@ -27,5 +27,4 @@ class GuestMode extends StatelessWidget {
       ],
     );
   }
-
 }

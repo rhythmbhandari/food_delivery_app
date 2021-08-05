@@ -22,44 +22,43 @@ class _CategoriesState extends State<Categories> {
       child: SizedBox(
         height: 35,
         child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: demoCategories.length,
-          itemBuilder: (BuildContext context, int index) {
-            return GestureDetector(
-              onTap: () {
-                setState(() {
-                  this.selectedIndex = index;
-                });
-              },
-              child: Container(
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white,
-                ),
-                padding: EdgeInsets.symmetric(horizontal: kDefaultPadding * 0.8),
-                margin: EdgeInsets.only(right: kDefaultPadding * 0.5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-
-                    SizedBox(width: 5),
-
-                    Text(
-                      demoCategories[index].name,
-                      style: GoogleFonts.raleway(
-                        fontSize: 16,
-                        color: Color.fromRGBO(33, 158, 188, 1),
-                        fontWeight: selectedIndex == index ? FontWeight.bold : FontWeight.w300
+            scrollDirection: Axis.horizontal,
+            itemCount: demoCategories.length,
+            itemBuilder: (BuildContext context, int index) {
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    this.selectedIndex = index;
+                  });
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                  ),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: kDefaultPadding * 0.8),
+                  margin: EdgeInsets.only(right: kDefaultPadding * 0.5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(width: 5),
+                      Text(
+                        demoCategories[index].name,
+                        style: GoogleFonts.raleway(
+                            fontSize: 16,
+                            color: Color.fromRGBO(33, 158, 188, 1),
+                            fontWeight: selectedIndex == index
+                                ? FontWeight.bold
+                                : FontWeight.w300),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            );
-          }
-        ),
+              );
+            }),
       ),
     );
   }

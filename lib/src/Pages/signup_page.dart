@@ -7,7 +7,6 @@ import 'package:food_delivery_app/src/Pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'login_page.dart';
 
-
 class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
