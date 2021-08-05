@@ -5,6 +5,7 @@ import 'package:food_delivery_app/src/Common_Components/categories.dart';
 import 'package:food_delivery_app/src/Common_Components/default_padding.dart';
 import 'package:food_delivery_app/src/Common_Components/item_card.dart';
 import 'package:food_delivery_app/src/Product/product_desc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -42,7 +43,7 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 'Food Delivery',
-                style: TextStyle(
+                style: GoogleFonts.raleway(
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.w700
@@ -81,7 +82,7 @@ class HomePage extends StatelessWidget {
 
               Text(
                 "What's Trending?",
-                style: TextStyle(
+                style: GoogleFonts.raleway(
                   color: Colors.white,
                   fontSize: 18,
                 ),

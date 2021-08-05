@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/src/Common_Components/default_padding.dart';
 import 'package:food_delivery_app/src/Product/product_desc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'add_cart.dart';
 
@@ -22,7 +23,7 @@ class PriceAndBuy extends StatelessWidget {
             children: [
               Text(
                 'Price',
-                style: TextStyle(
+                style: GoogleFonts.raleway(
                   fontSize: 18.0,
                 ),
               ),
@@ -31,14 +32,14 @@ class PriceAndBuy extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: '\£ ',
-                      style: TextStyle(
+                      style: GoogleFonts.raleway(
                         color: kRedColor,
                         fontSize: 22
                       )
                     ),
                     TextSpan(
                       text: item.price.toString(),
-                      style: TextStyle(
+                      style: GoogleFonts.raleway(
                         color: Colors.black,
                         fontSize: 22
                       )

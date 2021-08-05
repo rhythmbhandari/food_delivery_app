@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/src/Common_Components/default_padding.dart';
 import 'package:food_delivery_app/src/Product/product_category.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Categories extends StatefulWidget {
   const Categories({
@@ -47,7 +48,7 @@ class _CategoriesState extends State<Categories> {
 
                     Text(
                       demoCategories[index].name,
-                      style: TextStyle(
+                      style: GoogleFonts.raleway(
                         fontSize: 16,
                         color: Color.fromRGBO(33, 158, 188, 1),
                         fontWeight: selectedIndex == index ? FontWeight.bold : FontWeight.w300

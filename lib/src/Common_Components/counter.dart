@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/src/Common_Components/default_padding.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class QtyCounter extends StatelessWidget {
@@ -21,7 +22,7 @@ class QtyCounter extends StatelessWidget {
 
         Text(
           '1',
-          style: TextStyle(
+          style: GoogleFonts.raleway(
             fontSize: 18
           ),
         ),
@@ -60,7 +61,7 @@ class QtyButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: TextStyle(
+          style: GoogleFonts.raleway(
             color: kRedColor,
             fontSize: 18
           ),

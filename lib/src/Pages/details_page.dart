@@ -5,6 +5,7 @@ import 'package:food_delivery_app/src/Common_Components/counter.dart';
 import 'package:food_delivery_app/src/Common_Components/default_padding.dart';
 import 'package:food_delivery_app/src/Common_Components/title_bar.dart';
 import 'package:food_delivery_app/src/Product/product_desc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DetailsPage extends StatelessWidget {
   final Item item;
@@ -59,7 +60,7 @@ class DetailsPage extends StatelessWidget {
                       children: [
                         Text(
                           'Detail',
-                          style: TextStyle(
+                          style: GoogleFonts.raleway(
                             fontSize: 18
                           ),
                         ),
@@ -72,7 +73,7 @@ class DetailsPage extends StatelessWidget {
 
                     Text(
                       item.description,
-                      style: TextStyle(
+                      style: GoogleFonts.raleway(
                         fontSize: 14
                       ),
                     ),

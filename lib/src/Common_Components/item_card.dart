@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/src/Common_Components/default_padding.dart';
 import 'package:food_delivery_app/src/Pages/details_page.dart';
 import 'package:food_delivery_app/src/Product/product_desc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
@@ -53,7 +53,7 @@ class ItemCard extends StatelessWidget {
                       ),
                       Text(
                         '\$ ${item.price}',
-                        style: TextStyle(
+                        style: GoogleFonts.raleway(
                           color: kRedColor,
                           fontWeight: FontWeight.bold
                         ),
